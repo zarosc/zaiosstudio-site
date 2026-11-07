@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groundwork — a supply chain sim by ZAIOs Games</title>
+  <meta name="description" content="Groundwork is an economic management sim about supply chains. Build a holding, not a city. Coming to Steam.">
+  <link rel="canonical" href="https://zaiosstudio.com/">
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zaiosstudio.com/">
+  <meta property="og:site_name" content="ZAIOs Games">
+  <meta property="og:title" content="Groundwork — Build a holding, not a city">
+  <meta property="og:description" content="An economic sim about supply chains, made by a solo developer. Coming to Steam.">
+  <meta property="og:image" content="https://zaiosstudio.com/images/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@zaiosstudio">
+
+  <link rel="preload" href="fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="zaios" href="index.html" aria-label="ZAIOs Games, home">
+      <img class="zaios-logo" src="assets/zaios-games-logo.png" alt="ZAIOs Games" width="640" height="247">
+    </a>
+    <nav aria-label="Main">
+      <span class="page-links">
+        <a class="opt" href="#game">The game</a>
+        <a class="opt" href="#studio">Studio</a>
+        <a href="press.html">Press</a>
+      </span>
+      <div class="lines" role="list">
+        <a role="listitem" href="index.html" aria-current="page">Games</a>
+        <a role="listitem" href="mobile/index.html">Mobile</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" style="background-image: url('images/hero.jpg'), linear-gradient(160deg, #1B4F72 0%, #0E1826 70%);">
+      <div class="wrap">
+        <h1><img class="hero-logo" src="images/logo-groundwork.png" alt="Groundwork"></h1>
+        <p class="tagline">Build a holding, not a city.</p>
+        <p class="sub">An economic sim about supply chains. Run production from raw materials to finished goods, undercut rival holdings on price, and keep the cities you supply growing.</p>
+        <div class="ctas">
+          <a class="btn primary" data-cta href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.1C.9 8.6 3 5 6.5 5c2 0 3.5 1.1 4.3 2.4h2.4C14 6.1 15.5 5 17.5 5 21 5 23.1 8.6 21.6 11.9 19.5 16.4 12 21 12 21z"/></svg>
+            <span data-cta-label>Follow development</span>
+          </a>
+          <a class="btn ghost" href="#game">See the game</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="game">
+      <div class="wrap">
+        <p class="eyebrow">The game</p>
+        <h2>Cities grow only if you keep them supplied</h2>
+        <p class="lead">You don't zone districts or lay out neighborhoods. You run a holding company that builds, buys and upgrades production sites — and the cities around you grow as a consequence of how well you serve them.</p>
+
+        <div class="video" id="teaser" style="margin-bottom: 40px;"></div>
+
+        <div class="compare">
+          <img src="images/day-0001.jpg" alt="A small town on day 1" loading="lazy">
+          <img class="after" src="images/day-1000.jpg" alt="The same town grown into a city on day 1000" loading="lazy">
+          <span class="tag l">Day 1</span>
+          <span class="tag r">Day 1000</span>
+          <div class="handle"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Compare day 1 and day 1000">
+        </div>
+        <p class="caption">Same map, same view, one thousand in-game days apart. Drag to compare.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="features">
+          <article class="feature">
+            <div class="shot"><img src="images/shot-chains.jpg" alt="A valley with farms, roads and production sites" loading="lazy"></div>
+            <div class="body">
+              <h3>Supply chains</h3>
+              <p>Every building turns inputs into outputs. Break a link and the shelves go empty.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <div class="shot"><img src="images/shot-city.jpg" alt="A dense city supplied by the player's holding" loading="lazy"></div>
+            <div class="body">
+              <h3>Living cities</h3>
+              <p>Cities grow and shrink on their own, based on the service they get.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <div class="shot"><img src="images/shot-night.jpg" alt="A coastal city lit up at night" loading="lazy"></div>
+            <div class="body">
+              <h3>Price competition</h3>
+              <p>The cheapest supplier wins the demand. Set your margins building by building.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio">
+      <div class="wrap studio">
+        <img class="zaios-logo big" src="assets/zaios-games-logo.png" alt="" width="640" height="247">
+        <div>
+          <p class="eyebrow studio-eyebrow">The studio</p>
+          <p>ZAIOs Games is a one-person indie studio from northern Italy, making systems-driven strategy games. Groundwork is our debut, built in Godot.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> ZAIOs Games</span>
+      <div class="links">
+        <a data-email href="#">contact@zaiosstudio.com</a>
+        <a data-link="steam" href="#">Steam</a>
+        <a data-link="x" href="#">X</a>
+        <a data-link="discord" href="#">Discord</a>
+        <a data-link="itch" href="#">itch.io</a>
+        <a href="press.html">Press kit</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+/* Zaios Games — sito statico. Font: Poppins (SIL OFL), ospitato qui: nessuna chiamata a servizi esterni. */
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Poppins"; src: url("fonts/poppins-latin-800-italic.woff2") format("woff2"); font-weight: 800; font-style: italic; font-display: swap; }
+
+:root {
+  /* Studio: fondo notte e neon azzurro del logo Zaios */
+  --bg: #070D1A;
+  --surface: #0F1A2E;
+  --line: #1E2D47;
+  --text: #EEF2F7;
+  --muted: #A3B2C6;
+  --neon: #35C8FF;
+  --neon-core: #E6F7FF;
+  --z-dark: #0B2A6B;
+  --z-mid: #1450C8;
+  --outline: #0A2A6E;
+  /* Groundwork: ambra del gioco, usata solo per le azioni sul gioco */
+  --accent: #E68C28;
+  --accent-ink: #1A1208;
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--neon); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* Barra in alto */
+.topbar {
+  position: absolute; inset: 0 0 auto 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 24px;
+}
+.topbar nav { display: flex; align-items: center; gap: 26px; font-size: 15px; }
+.page-links { display: flex; gap: 22px; }
+.page-links a { text-decoration: none; color: var(--text); opacity: .85; }
+.page-links a:hover, .page-links a[aria-current] { opacity: 1; color: var(--neon); }
+
+/* Selettore delle due linee: Games · Mobile */
+.lines {
+  display: inline-flex; padding: 3px; border-radius: 999px;
+  border: 1px solid rgba(53,200,255,.35); background: rgba(7,13,26,.55);
+}
+.lines a {
+  padding: 5px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  text-decoration: none; color: var(--muted);
+}
+.lines a:hover { color: var(--text); }
+.lines a[aria-current] {
+  color: #051022; background: var(--neon);
+  box-shadow: 0 0 12px rgba(53,200,255,.55);
+}
+
+/* Wordmark Zaios: Z a fulmine al neon, AIOS bianco con contorno blu, GAMES corsivo sotto a destra */
+.zaios {
+  --s: 26px;                      /* altezza delle maiuscole: tutto scala da qui */
+  display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto;
+  column-gap: calc(var(--s) * .04); text-decoration: none; line-height: 1;
+}
+.zaios .z {
+  grid-row: 1; width: calc(var(--s) * .9); height: calc(var(--s) * 1.25);
+  margin-top: calc(var(--s) * -.12); margin-bottom: calc(var(--s) * -.13);
+  overflow: visible;
+  filter: drop-shadow(0 0 calc(var(--s) * .12) rgba(53,200,255,.75)) drop-shadow(0 0 calc(var(--s) * .35) rgba(53,200,255,.35));
+}
+.zaios .word {
+  grid-row: 1; align-self: center;
+  font-weight: 800; font-size: calc(var(--s) * 1.36); letter-spacing: .02em; text-transform: none;
+  background: linear-gradient(180deg, #FFFFFF 0%, #CFE3FF 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-text-stroke: calc(var(--s) * .06) var(--outline); paint-order: stroke fill;
+  filter: drop-shadow(0 0 calc(var(--s) * .02) var(--neon)) drop-shadow(0 0 calc(var(--s) * .16) rgba(47,168,255,.45));
+}
+.zaios .line2 {
+  grid-column: 1 / -1; grid-row: 2; justify-self: end;
+  font-weight: 800; font-style: italic; font-size: calc(var(--s) * .5); letter-spacing: .08em; text-transform: uppercase;
+  color: #FFFFFF; margin-top: calc(var(--s) * .14);
+  -webkit-text-stroke: calc(var(--s) * .025) var(--outline); paint-order: stroke fill;
+  text-shadow: 0 0 calc(var(--s) * .2) rgba(47,168,255,.55);
+}
+.zaios.big { --s: 52px; }
+/* Logo ZAIOs Games: immagine ufficiale (stessa dell'intro) */
+.zaios-logo { display: block; height: 80px; width: auto; filter: drop-shadow(0 2px 10px rgba(0,0,0,.45)); }
+.zaios-logo.big { height: 150px; }
+
+/* Hero */
+.hero {
+  position: relative; min-height: 92vh; display: flex; align-items: flex-end;
+  background: linear-gradient(160deg, #1B4F72 0%, #0E1826 70%);
+  background-size: cover; background-position: center;
+}
+.hero::before {
+  /* velo scuro in alto per far leggere logo e menu sopra qualsiasi screenshot */
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 160px; z-index: 1;
+  background: linear-gradient(180deg, rgba(7,13,26,.75) 0%, rgba(7,13,26,0) 100%);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7,13,26,.1) 0%, rgba(7,13,26,.35) 45%, rgba(7,13,26,.97) 100%);
+}
+.hero .wrap { position: relative; z-index: 2; padding-bottom: 72px; width: 100%; }
+.hero-logo { width: min(560px, 86vw); filter: drop-shadow(0 4px 18px rgba(0,0,0,.45)); }
+.hero h1 { margin: 0; }
+.tagline { font-size: clamp(22px, 3.2vw, 32px); font-weight: 600; margin: 18px 0 6px; }
+.sub { color: var(--muted); max-width: 620px; margin: 0 0 28px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 16px;
+  text-decoration: none; border: 1px solid transparent; transition: transform .15s, background .15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { background: #F09B3A; }
+.btn.ghost { border-color: rgba(238,242,247,.35); color: var(--text); }
+.btn.ghost:hover { background: rgba(238,242,247,.08); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+/* Sezioni */
+section { padding: 88px 0; }
+section + section { border-top: 1px solid var(--line); }
+.eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 10px; }
+.eyebrow.studio-eyebrow { color: var(--neon); }
+h2 { font-size: clamp(26px, 3.4vw, 38px); line-height: 1.2; margin: 0 0 16px; }
+.lead { color: var(--muted); max-width: 680px; margin: 0 0 40px; font-size: 18px; }
+
+/* Video */
+.video { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* Confronto giorno 1 / giorno 1000 */
+.compare { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); user-select: none; touch-action: pan-y; }
+.compare img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.compare .after { clip-path: inset(0 0 0 50%); }
+.compare .handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: var(--text); transform: translateX(-1px); pointer-events: none; }
+.compare .handle::after {
+  content: "\2194"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 40px; height: 40px; border-radius: 50%; background: var(--text); color: var(--bg);
+  display: grid; place-items: center; font-size: 20px; font-weight: 700;
+}
+.compare .tag { position: absolute; bottom: 14px; padding: 4px 10px; border-radius: 6px; background: rgba(7,13,26,.8); font-size: 14px; font-weight: 600; }
+.compare .tag.l { left: 14px; }
+.compare .tag.r { right: 14px; }
+.compare input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.caption { color: var(--muted); font-size: 15px; margin-top: 12px; }
+
+/* Tre punti */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.feature { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.feature .shot { aspect-ratio: 16 / 9; background: linear-gradient(135deg, #1B4F72, #0F1A2E); }
+.feature .shot img { width: 100%; height: 100%; object-fit: cover; }
+.feature .body { padding: 20px 22px 24px; }
+.feature h3 { margin: 0 0 8px; font-size: 20px; }
+.feature p { margin: 0; color: var(--muted); font-size: 16px; }
+
+/* Studio */
+#studio { background: radial-gradient(ellipse at 15% 50%, rgba(20,80,200,.18) 0%, rgba(7,13,26,0) 60%), #050A14; }
+.studio { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; }
+.studio p { color: var(--muted); margin: 0; max-width: 620px; }
+.studio p + p { margin-top: 12px; }
+
+/* Footer */
+footer { border-top: 1px solid var(--line); padding: 40px 0 56px; color: var(--muted); font-size: 15px; background: #050A14; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 18px 32px; align-items: center; justify-content: space-between; }
+footer .links { display: flex; flex-wrap: wrap; gap: 18px; }
+footer a { text-decoration: none; overflow-wrap: anywhere; }
+footer a:hover { color: var(--neon); }
+
+/* Pagina press */
+.page-head { padding: 150px 0 40px; background: linear-gradient(160deg, #1B4F72 0%, #0E1826 55%, #070D1A 100%); }
+.facts { width: 100%; border-collapse: collapse; margin: 8px 0 40px; }
+.facts th, .facts td { text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.facts th { width: 220px; color: var(--muted); font-weight: 400; }
+.facts td { overflow-wrap: anywhere; }
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.gallery a { display: block; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 16 / 9; background: var(--surface); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+.gallery a:hover img { transform: scale(1.03); }
+
+/* Pagina della linea Mobile */
+.page-mobile { display: flex; flex-direction: column; min-height: 100vh; }
+.page-mobile main { flex: 1; display: flex; }
+.line-hero {
+  flex: 1; display: flex; align-items: center; padding: 140px 0 96px;
+  background: radial-gradient(ellipse at 30% 40%, rgba(20,80,200,.28) 0%, rgba(7,13,26,0) 60%), #050A14;
+}
+.line-hero .wrap { width: 100%; }
+.line-hero .zaios, .line-hero .zaios-logo { margin-bottom: 40px; }
+.line-lead { font-size: clamp(20px, 2.6vw, 26px); font-weight: 600; max-width: 720px; margin: 0 0 18px; line-height: 1.4; }
+.line-status { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); margin: 0 0 32px; }
+.line-status .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 10px var(--neon); }
+.line-hero .btn.ghost { overflow-wrap: anywhere; }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+[hidden] { display: none !important; }
+
+@media (max-width: 860px) {
+  .features { grid-template-columns: 1fr; }
+  .studio { grid-template-columns: 1fr; gap: 28px; }
+  .gallery { grid-template-columns: 1fr; }
+  .topbar { padding: 14px 16px; }
+  .topbar nav { gap: 14px; font-size: 14px; }
+  .page-links .opt { display: none; }     /* su telefono restano solo Press e il selettore */
+  .lines a { padding: 5px 11px; font-size: 13px; }
+  .zaios { --s: 20px; }
+  .zaios-logo { height: 52px; }
+  .zaios-logo.big { height: 110px; }
+  .zaios.big { --s: 40px; }
+  section { padding: 64px 0; }
+  .facts th { width: 120px; }
+}
+@media (max-width: 380px) {
+  .topbar nav { gap: 10px; font-size: 13px; }
+  .lines a { padding: 4px 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .gallery img { transition: none; }
+}
