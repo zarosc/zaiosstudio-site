@@ -7,7 +7,7 @@ const LINKS = {
   discord: "",          // link d'invito, da inserire quando apri il server al pubblico
   x: "https://x.com/zaiosstudio",          // valido dopo aver rinominato @zarointeractive
   itch: "https://zaiosstudio.itch.io",     // valido dopo aver rinominato zarointeractive.itch.io
-  email: "contact@zaiosstudio.com",        // la casella deve esistere prima di mettere online il sito
+  email: "contacts@zaiosstudio.com",        // la casella deve esistere prima di mettere online il sito
 };
 
 // Logo Zaios: la Z a fulmine è un disegno unico, inserito dove c'è <svg data-z>.
